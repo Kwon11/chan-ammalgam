@@ -14,6 +14,13 @@ export const MainContainer = styled.main`
   align-items: center;
 `;
 
+export const Input = styled.input`
+  width: 80%;
+  max-width: 500px;
+  padding: 1rem 1rem;
+  border-radius: 30px;
+`;
+
 // export const Title = styled.h1`
 //   margin: 3rem 0;
 //   line-height: 1;
