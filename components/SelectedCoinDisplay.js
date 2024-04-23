@@ -26,7 +26,7 @@ export const SelectedCoinDisplay = (coin) => {
 
 const SelectedCoinContainer = styled.div`
   width: 300px;
-  height: 300px;
+  height: 25%;
   display: flex;
   flex-direction: column;
   align-items: center;

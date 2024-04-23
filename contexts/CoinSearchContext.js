@@ -28,7 +28,7 @@ export const CoinSearchContextProvider = ({ children }) => {
       fetchTokenAddressGecko(
         selectedCoin.id,
         (res) => setSelectedTokenAddress(res.platforms.ethereum),
-        console.log
+        e => console.log(e)
       );
       fetchPriceHistoryGecko(selectedCoin.id, setPriceHistory, (e) => console.log(e));
     }

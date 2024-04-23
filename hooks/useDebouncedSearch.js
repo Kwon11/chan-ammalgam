@@ -21,7 +21,7 @@ const useDebouncedSearch = (searchTerm, apiCall, resHandler, errHandler) => {
     return () => {
       debounceTimer.current && clearTimeout(debounceTimer.current);
     }
-  }, [searchTerm]);
+  }, [searchTerm, apiCall, resHandler, errHandler]);
 }
 
 export default useDebouncedSearch;
