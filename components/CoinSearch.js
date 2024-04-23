@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useRootContext } from '../contexts/RootContext';
 import { Input } from '../styles/StyledComponents.js';
+import useDebouncedSearch from '../hooks/useDebouncedSearch.js';
+import searchGecko from '../utils/searchGecko.js';
+import CoinsDisplay from './CoinsDisplay.js';
 
 const CoinSearch = () => {
   const { searchTerm, setSearchTerm } = useRootContext();
+  const [ searchResults, setSearchResults ] = useState();
 
   const handleChange = (e) => {
     e.preventDefault();
     setSearchTerm(e.target.value)
   };
+
+  const searchResHandler = (result) => {
+    console.log('results', result);
+    setSearchResults(result.coins);
+  };
+  const searchErrHandler = err => console.log(err);
+  useDebouncedSearch(searchTerm, searchGecko, searchResHandler, searchErrHandler);
 
   return (
     <CoinSearchContainer>
@@ -19,6 +30,7 @@ const CoinSearch = () => {
         id="coinSearchInput"
         name="coinSearchInput"
       />
+      <CoinsDisplay coins={searchResults} />
     </CoinSearchContainer>
   )
 };
@@ -28,6 +40,8 @@ import styled from 'styled-components';
 const CoinSearchContainer = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 `;
 

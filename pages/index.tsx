@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css';
 import { HomeContainer, MainContainer } from '../styles/StyledComponents.js';
 
 import { RootContextProvider } from '../contexts/RootContext.js';
+import SelectedCoinDisplay from '../components/SelectedCoinDisplay.js';
 import CoinSearch from '../components/CoinSearch.js';
 
 const Home: NextPage = () => {
@@ -22,8 +23,10 @@ const Home: NextPage = () => {
         <MainContainer>
           <ConnectButton />
           <h1 className={styles.title}>
-            Welcome to <a href="">Ammalgam</a>!
+            Welcome to <a href="">Ammalgam</a>!<br></br>
+            Select a coin to search!
           </h1>
+          <SelectedCoinDisplay />
           <CoinSearch />
         </MainContainer>
       </HomeContainer>
