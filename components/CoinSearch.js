@@ -5,15 +5,6 @@ import searchGecko from "../utils/searchGecko.js";
 import styled from "styled-components";
 import { ethDefaultSearchResults } from "@/utils/ethereumDefaults";
 
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
-
 const CoinSearch = () => {
   const { searchTerm, setSearchTerm, setSelectedCoin } = useCoinSearchContext();
   const [searchResults, setSearchResults] = useState(ethDefaultSearchResults);
@@ -36,12 +27,6 @@ const CoinSearch = () => {
     searchResHandler,
     searchErrHandler
   );
-
-  useEffect(() => {
-    console.log("new search results", searchResults);
-  }, [searchResults]);
-
-  console.log("searchResults", searchResults);
 
   return (
     <Container>

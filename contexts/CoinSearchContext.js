@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import useLocalStorage from "../hooks/useLocalStorage.js";
-import { useBalance, useAccount } from "wagmi";
+import { useAccount } from "wagmi";
 
 import fetchTokenAddressGecko from "../utils/fetchTokenAddressGecko.js";
 import fetchPriceHistoryGecko from "../utils/fetchPriceHistoryGecko.js";
@@ -18,13 +17,10 @@ export const CoinSearchContextProvider = ({ children }) => {
   const [selectedTokenAddress, setSelectedTokenAddress] = useState(ethDefaultTokenAddress);
   const [priceHistory, setPriceHistory] = useState(ethDefaultPriceHistory);
   const [walletAddress, setWalletAddress] = useState(useAccount().address);
-  // chantodo selectedCoin doesnt work with local storage unless you parse/string json
 
-  // tokenAddress
   useEffect(() => {
-    // tokenAddress
     if (selectedCoin && selectedCoin.id) {
-      // chankwontodo make real error handler
+      // chantodo make real error handler with UI
       fetchTokenAddressGecko(
         selectedCoin.id,
         (res) => setSelectedTokenAddress(res.platforms.ethereum),
@@ -45,7 +41,6 @@ export const CoinSearchContextProvider = ({ children }) => {
     priceHistory,
     setPriceHistory,
   };
-  console.log('values', value);
 
   return (
     <CoinSearchContext.Provider value={value}>

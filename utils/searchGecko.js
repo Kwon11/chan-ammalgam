@@ -1,5 +1,4 @@
 import { apiKey } from './common.js';
-import { geckoSearchResults } from './queries.js';
 const searchGecko = async (searchInput, resHandler, errHandler) => {
   fetch(`https://api.coingecko.com/api/v3/search?query=${searchInput}`, {
     method: 'GET',
@@ -12,7 +11,6 @@ const searchGecko = async (searchInput, resHandler, errHandler) => {
     return res.json();
   })
   .then(data => {
-    console.log('SEARCH result', data);
     resHandler(data);
   })
   .catch(err => errHandler(err));

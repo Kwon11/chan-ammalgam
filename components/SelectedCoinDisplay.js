@@ -11,7 +11,6 @@ export const SelectedCoinDisplay = (coin) => {
     token: selectedTokenAddress,
   });
   const coinBalance = balanceResponse.data;
-  console.log("coinBalance", coinBalance);
 
   return (
     <SelectedCoinContainer>
