@@ -4,14 +4,6 @@ import Head from "next/head";
 import { Inter as FontSans } from "next/font/google";
 import styled from "styled-components";
 
-import { cn } from "../@/lib/utils";
-// chantodo: figure out what went wrong with shadcn installation, should not require "../@"
-
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
-
 import { CoinSearchContextProvider } from "../contexts/CoinSearchContext.js";
 import SelectedCoinDisplay from "../components/SelectedCoinDisplay.js";
 import CoinSearch from "../components/CoinSearch.js";
@@ -21,16 +13,14 @@ const Home: NextPage = () => {
   return (
     <CoinSearchContextProvider>
       <div
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
-        )}
         style={{
           height: "100vh",
           width: "100vw",
           background:
             "linear-gradient(to bottom left, #04373A 0%, black 40%, black 60%, #04373A 80%)",
           color: "#d6d6d6",
+          padding: "0",
+          margin: "0",
         }}
       >
         <Head>
@@ -93,6 +83,7 @@ const Heading = styled.h1`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 0px;
 `;
 
 export default Home;
