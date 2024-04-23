@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRootContext } from '../contexts/RootContext';
 import styled from 'styled-components';
-import { useReadContract, useAccount } from 'wagmi';
+import { useReadContract, useAccount, erc20ABI, wagmiContractConfig } from 'wagmi';
 import fetchTokenAddressGecko from '../utils/fetchTokenAddressGecko.js';
 
 // import { WagmiConfig, createClient, configureChains, defaultChains } from 'wagmi';
@@ -18,22 +18,25 @@ export const SelectedCoinDisplay = (coin) => {
   // const { tokenAddress, setTokenAddress } = useState();
 
 
+  const address = useAccount().address;
+  const result = useReadContract({
+    ...wagmiContractConfig,
+    // abi: erc20ABI,
+    functionName: 'balanceOf',
+    args: [address]
+  });
+  console.log('RESULT', result, result.data);
 
-  useEffect(() => {
-  const tokenAddressResHandler = (data) => {
-    console.log('TOKEN ADDRESS RESPONSE', data);
-  };
-  const tokenAddressErrHandler = e => console.log('tokenAddressError', e); // chankwontodo
-  console.log('selectedCoin', selectedCoin);
-  if(selectedCoin && selectedCoin.id) fetchTokenAddressGecko(selectedCoin.id, tokenAddressResHandler, tokenAddressErrHandler);
+  // useEffect(() => {
+  //   const tokenAddressResHandler = (data) => {
+  //     console.log('TOKEN ADDRESS RESPONSE', data);
+  //   };
+  //   const tokenAddressErrHandler = e => console.log('tokenAddressError', e); // chankwontodo
+  //   console.log('selectedCoin', selectedCoin);
+  //   if(selectedCoin && selectedCoin.id) fetchTokenAddressGecko(selectedCoin.id, tokenAddressResHandler, tokenAddressErrHandler);
 
-  // const result = useReadContract({
-  //   address: tokenAddress,
-  //   functionName: 'balanceOf',
-  //   args: [useAccount().address]
-  // });
 
-  },[selectedCoin]);
+  // },[selectedCoin]);
 
   return selectedCoin ? (
       <SelectedCoinContainer>
