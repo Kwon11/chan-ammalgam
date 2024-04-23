@@ -1,6 +1,6 @@
 import { createChart, ColorType } from "lightweight-charts";
 import { useEffect, useRef } from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const ChartComponent = (props) => {
   const {

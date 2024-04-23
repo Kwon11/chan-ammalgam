@@ -28,8 +28,8 @@ const Home: NextPage = () => {
         style={{
           height: "100vh",
           width: "100vw",
-          // backgroundColor: "#131313",
-          background: 'linear-gradient(to bottom left, #04373A 0%, black 40%, black 60%, #04373A 80%)',
+          background:
+            "linear-gradient(to bottom left, #04373A 0%, black 40%, black 60%, #04373A 80%)",
           color: "#d6d6d6",
         }}
       >

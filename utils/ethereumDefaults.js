@@ -1,239 +1,271 @@
 export const ethDefaultSearchResults = [
   {
-      "id": "ethereum",
-      "name": "Ethereum",
-      "api_symbol": "ethereum",
-      "symbol": "ETH",
-      "market_cap_rank": 2,
-      "thumb": "https://assets.coingecko.com/coins/images/279/thumb/ethereum.png",
-      "large": "https://assets.coingecko.com/coins/images/279/large/ethereum.png"
+    id: "ethereum",
+    name: "Ethereum",
+    api_symbol: "ethereum",
+    symbol: "ETH",
+    market_cap_rank: 2,
+    thumb: "https://assets.coingecko.com/coins/images/279/thumb/ethereum.png",
+    large: "https://assets.coingecko.com/coins/images/279/large/ethereum.png",
   },
   {
-      "id": "tether",
-      "name": "Tether",
-      "api_symbol": "tether",
-      "symbol": "USDT",
-      "market_cap_rank": 3,
-      "thumb": "https://assets.coingecko.com/coins/images/325/thumb/Tether.png",
-      "large": "https://assets.coingecko.com/coins/images/325/large/Tether.png"
+    id: "tether",
+    name: "Tether",
+    api_symbol: "tether",
+    symbol: "USDT",
+    market_cap_rank: 3,
+    thumb: "https://assets.coingecko.com/coins/images/325/thumb/Tether.png",
+    large: "https://assets.coingecko.com/coins/images/325/large/Tether.png",
   },
   {
-      "id": "staked-ether",
-      "name": "Lido Staked Ether",
-      "api_symbol": "staked-ether",
-      "symbol": "STETH",
-      "market_cap_rank": 8,
-      "thumb": "https://assets.coingecko.com/coins/images/13442/thumb/steth_logo.png",
-      "large": "https://assets.coingecko.com/coins/images/13442/large/steth_logo.png"
+    id: "staked-ether",
+    name: "Lido Staked Ether",
+    api_symbol: "staked-ether",
+    symbol: "STETH",
+    market_cap_rank: 8,
+    thumb:
+      "https://assets.coingecko.com/coins/images/13442/thumb/steth_logo.png",
+    large:
+      "https://assets.coingecko.com/coins/images/13442/large/steth_logo.png",
   },
   {
-      "id": "ethereum-classic",
-      "name": "Ethereum Classic",
-      "api_symbol": "ethereum-classic",
-      "symbol": "ETC",
-      "market_cap_rank": 28,
-      "thumb": "https://assets.coingecko.com/coins/images/453/thumb/ethereum-classic-logo.png",
-      "large": "https://assets.coingecko.com/coins/images/453/large/ethereum-classic-logo.png"
+    id: "ethereum-classic",
+    name: "Ethereum Classic",
+    api_symbol: "ethereum-classic",
+    symbol: "ETC",
+    market_cap_rank: 28,
+    thumb:
+      "https://assets.coingecko.com/coins/images/453/thumb/ethereum-classic-logo.png",
+    large:
+      "https://assets.coingecko.com/coins/images/453/large/ethereum-classic-logo.png",
   },
   {
-      "id": "renzo-restaked-eth",
-      "name": "Renzo Restaked ETH",
-      "api_symbol": "renzo-restaked-eth",
-      "symbol": "EZETH",
-      "market_cap_rank": 39,
-      "thumb": "https://assets.coingecko.com/coins/images/34753/thumb/Ezeth_logo_circle.png",
-      "large": "https://assets.coingecko.com/coins/images/34753/large/Ezeth_logo_circle.png"
+    id: "renzo-restaked-eth",
+    name: "Renzo Restaked ETH",
+    api_symbol: "renzo-restaked-eth",
+    symbol: "EZETH",
+    market_cap_rank: 39,
+    thumb:
+      "https://assets.coingecko.com/coins/images/34753/thumb/Ezeth_logo_circle.png",
+    large:
+      "https://assets.coingecko.com/coins/images/34753/large/Ezeth_logo_circle.png",
   },
   {
-      "id": "wrapped-eeth",
-      "name": "Wrapped eETH",
-      "api_symbol": "wrapped-eeth",
-      "symbol": "WEETH",
-      "market_cap_rank": 52,
-      "thumb": "https://assets.coingecko.com/coins/images/33033/thumb/weETH.png",
-      "large": "https://assets.coingecko.com/coins/images/33033/large/weETH.png"
+    id: "wrapped-eeth",
+    name: "Wrapped eETH",
+    api_symbol: "wrapped-eeth",
+    symbol: "WEETH",
+    market_cap_rank: 52,
+    thumb: "https://assets.coingecko.com/coins/images/33033/thumb/weETH.png",
+    large: "https://assets.coingecko.com/coins/images/33033/large/weETH.png",
   },
   {
-      "id": "ethena-usde",
-      "name": "Ethena USDe",
-      "api_symbol": "ethena-usde",
-      "symbol": "USDE",
-      "market_cap_rank": 53,
-      "thumb": "https://assets.coingecko.com/coins/images/33613/thumb/3466ef_3c088c66c7d941e8856339d0bddf33cc_mv2.png",
-      "large": "https://assets.coingecko.com/coins/images/33613/large/3466ef_3c088c66c7d941e8856339d0bddf33cc_mv2.png"
+    id: "ethena-usde",
+    name: "Ethena USDe",
+    api_symbol: "ethena-usde",
+    symbol: "USDE",
+    market_cap_rank: 53,
+    thumb:
+      "https://assets.coingecko.com/coins/images/33613/thumb/3466ef_3c088c66c7d941e8856339d0bddf33cc_mv2.png",
+    large:
+      "https://assets.coingecko.com/coins/images/33613/large/3466ef_3c088c66c7d941e8856339d0bddf33cc_mv2.png",
   },
   {
-      "id": "rocket-pool-eth",
-      "name": "Rocket Pool ETH",
-      "api_symbol": "rocket-pool-eth",
-      "symbol": "RETH",
-      "market_cap_rank": 63,
-      "thumb": "https://assets.coingecko.com/coins/images/20764/thumb/reth.png",
-      "large": "https://assets.coingecko.com/coins/images/20764/large/reth.png"
+    id: "rocket-pool-eth",
+    name: "Rocket Pool ETH",
+    api_symbol: "rocket-pool-eth",
+    symbol: "RETH",
+    market_cap_rank: 63,
+    thumb: "https://assets.coingecko.com/coins/images/20764/thumb/reth.png",
+    large: "https://assets.coingecko.com/coins/images/20764/large/reth.png",
   },
   {
-      "id": "mantle-staked-ether",
-      "name": "Mantle Staked Ether",
-      "api_symbol": "mantle-staked-ether",
-      "symbol": "METH",
-      "market_cap_rank": 70,
-      "thumb": "https://assets.coingecko.com/coins/images/33345/thumb/symbol_transparent_bg.png",
-      "large": "https://assets.coingecko.com/coins/images/33345/large/symbol_transparent_bg.png"
+    id: "mantle-staked-ether",
+    name: "Mantle Staked Ether",
+    api_symbol: "mantle-staked-ether",
+    symbol: "METH",
+    market_cap_rank: 70,
+    thumb:
+      "https://assets.coingecko.com/coins/images/33345/thumb/symbol_transparent_bg.png",
+    large:
+      "https://assets.coingecko.com/coins/images/33345/large/symbol_transparent_bg.png",
   },
   {
-      "id": "ethena",
-      "name": "Ethena",
-      "api_symbol": "ethena",
-      "symbol": "ENA",
-      "market_cap_rank": 79,
-      "thumb": "https://assets.coingecko.com/coins/images/36530/thumb/ethena.png",
-      "large": "https://assets.coingecko.com/coins/images/36530/large/ethena.png"
+    id: "ethena",
+    name: "Ethena",
+    api_symbol: "ethena",
+    symbol: "ENA",
+    market_cap_rank: 79,
+    thumb: "https://assets.coingecko.com/coins/images/36530/thumb/ethena.png",
+    large: "https://assets.coingecko.com/coins/images/36530/large/ethena.png",
   },
   {
-      "id": "ether-fi-staked-eth",
-      "name": "ether.fi Staked ETH",
-      "api_symbol": "ether-fi-staked-eth",
-      "symbol": "EETH",
-      "market_cap_rank": 86,
-      "thumb": "https://assets.coingecko.com/coins/images/33049/thumb/ether.fi_eETH.png",
-      "large": "https://assets.coingecko.com/coins/images/33049/large/ether.fi_eETH.png"
+    id: "ether-fi-staked-eth",
+    name: "ether.fi Staked ETH",
+    api_symbol: "ether-fi-staked-eth",
+    symbol: "EETH",
+    market_cap_rank: 86,
+    thumb:
+      "https://assets.coingecko.com/coins/images/33049/thumb/ether.fi_eETH.png",
+    large:
+      "https://assets.coingecko.com/coins/images/33049/large/ether.fi_eETH.png",
   },
   {
-      "id": "kelp-dao-restaked-eth",
-      "name": "Kelp DAO Restaked ETH",
-      "api_symbol": "kelp-dao-restaked-eth",
-      "symbol": "RSETH",
-      "market_cap_rank": 117,
-      "thumb": "https://assets.coingecko.com/coins/images/33800/thumb/Icon___Dark.png",
-      "large": "https://assets.coingecko.com/coins/images/33800/large/Icon___Dark.png"
+    id: "kelp-dao-restaked-eth",
+    name: "Kelp DAO Restaked ETH",
+    api_symbol: "kelp-dao-restaked-eth",
+    symbol: "RSETH",
+    market_cap_rank: 117,
+    thumb:
+      "https://assets.coingecko.com/coins/images/33800/thumb/Icon___Dark.png",
+    large:
+      "https://assets.coingecko.com/coins/images/33800/large/Icon___Dark.png",
   },
   {
-      "id": "dydx",
-      "name": "dYdX",
-      "api_symbol": "dydx",
-      "symbol": "ETHDYDX",
-      "market_cap_rank": 125,
-      "thumb": "https://assets.coingecko.com/coins/images/17500/thumb/hjnIm9bV.jpg",
-      "large": "https://assets.coingecko.com/coins/images/17500/large/hjnIm9bV.jpg"
+    id: "dydx",
+    name: "dYdX",
+    api_symbol: "dydx",
+    symbol: "ETHDYDX",
+    market_cap_rank: 125,
+    thumb: "https://assets.coingecko.com/coins/images/17500/thumb/hjnIm9bV.jpg",
+    large: "https://assets.coingecko.com/coins/images/17500/large/hjnIm9bV.jpg",
   },
   {
-      "id": "frax-ether",
-      "name": "Frax Ether",
-      "api_symbol": "frax-ether",
-      "symbol": "FRXETH",
-      "market_cap_rank": 130,
-      "thumb": "https://assets.coingecko.com/coins/images/28284/thumb/frxETH_icon.png",
-      "large": "https://assets.coingecko.com/coins/images/28284/large/frxETH_icon.png"
+    id: "frax-ether",
+    name: "Frax Ether",
+    api_symbol: "frax-ether",
+    symbol: "FRXETH",
+    market_cap_rank: 130,
+    thumb:
+      "https://assets.coingecko.com/coins/images/28284/thumb/frxETH_icon.png",
+    large:
+      "https://assets.coingecko.com/coins/images/28284/large/frxETH_icon.png",
   },
   {
-      "id": "sweth",
-      "name": "Swell Ethereum",
-      "api_symbol": "sweth",
-      "symbol": "SWETH",
-      "market_cap_rank": 134,
-      "thumb": "https://assets.coingecko.com/coins/images/30326/thumb/_lB7zEtS_400x400.jpg",
-      "large": "https://assets.coingecko.com/coins/images/30326/large/_lB7zEtS_400x400.jpg"
+    id: "sweth",
+    name: "Swell Ethereum",
+    api_symbol: "sweth",
+    symbol: "SWETH",
+    market_cap_rank: 134,
+    thumb:
+      "https://assets.coingecko.com/coins/images/30326/thumb/_lB7zEtS_400x400.jpg",
+    large:
+      "https://assets.coingecko.com/coins/images/30326/large/_lB7zEtS_400x400.jpg",
   },
   {
-      "id": "coinbase-wrapped-staked-eth",
-      "name": "Coinbase Wrapped Staked ETH",
-      "api_symbol": "coinbase-wrapped-staked-eth",
-      "symbol": "CBETH",
-      "market_cap_rank": 150,
-      "thumb": "https://assets.coingecko.com/coins/images/27008/thumb/cbeth.png",
-      "large": "https://assets.coingecko.com/coins/images/27008/large/cbeth.png"
+    id: "coinbase-wrapped-staked-eth",
+    name: "Coinbase Wrapped Staked ETH",
+    api_symbol: "coinbase-wrapped-staked-eth",
+    symbol: "CBETH",
+    market_cap_rank: 150,
+    thumb: "https://assets.coingecko.com/coins/images/27008/thumb/cbeth.png",
+    large: "https://assets.coingecko.com/coins/images/27008/large/cbeth.png",
   },
   {
-      "id": "tether-gold",
-      "name": "Tether Gold",
-      "api_symbol": "tether-gold",
-      "symbol": "XAUT",
-      "market_cap_rank": 153,
-      "thumb": "https://assets.coingecko.com/coins/images/10481/thumb/Tether_Gold.png",
-      "large": "https://assets.coingecko.com/coins/images/10481/large/Tether_Gold.png"
+    id: "tether-gold",
+    name: "Tether Gold",
+    api_symbol: "tether-gold",
+    symbol: "XAUT",
+    market_cap_rank: 153,
+    thumb:
+      "https://assets.coingecko.com/coins/images/10481/thumb/Tether_Gold.png",
+    large:
+      "https://assets.coingecko.com/coins/images/10481/large/Tether_Gold.png",
   },
   {
-      "id": "staked-frax-ether",
-      "name": "Staked Frax Ether",
-      "api_symbol": "staked-frax-ether",
-      "symbol": "SFRXETH",
-      "market_cap_rank": 162,
-      "thumb": "https://assets.coingecko.com/coins/images/28285/thumb/sfrxETH_icon.png",
-      "large": "https://assets.coingecko.com/coins/images/28285/large/sfrxETH_icon.png"
+    id: "staked-frax-ether",
+    name: "Staked Frax Ether",
+    api_symbol: "staked-frax-ether",
+    symbol: "SFRXETH",
+    market_cap_rank: 162,
+    thumb:
+      "https://assets.coingecko.com/coins/images/28285/thumb/sfrxETH_icon.png",
+    large:
+      "https://assets.coingecko.com/coins/images/28285/large/sfrxETH_icon.png",
   },
   {
-      "id": "ethereum-name-service",
-      "name": "Ethereum Name Service",
-      "api_symbol": "ethereum-name-service",
-      "symbol": "ENS",
-      "market_cap_rank": 170,
-      "thumb": "https://assets.coingecko.com/coins/images/19785/thumb/acatxTm8_400x400.jpg",
-      "large": "https://assets.coingecko.com/coins/images/19785/large/acatxTm8_400x400.jpg"
+    id: "ethereum-name-service",
+    name: "Ethereum Name Service",
+    api_symbol: "ethereum-name-service",
+    symbol: "ENS",
+    market_cap_rank: 170,
+    thumb:
+      "https://assets.coingecko.com/coins/images/19785/thumb/acatxTm8_400x400.jpg",
+    large:
+      "https://assets.coingecko.com/coins/images/19785/large/acatxTm8_400x400.jpg",
   },
   {
-      "id": "ether-fi",
-      "name": "Ether.fi",
-      "api_symbol": "ether-fi",
-      "symbol": "ETHFI",
-      "market_cap_rank": 188,
-      "thumb": "https://assets.coingecko.com/coins/images/35958/thumb/etherfi.jpeg",
-      "large": "https://assets.coingecko.com/coins/images/35958/large/etherfi.jpeg"
+    id: "ether-fi",
+    name: "Ether.fi",
+    api_symbol: "ether-fi",
+    symbol: "ETHFI",
+    market_cap_rank: 188,
+    thumb: "https://assets.coingecko.com/coins/images/35958/thumb/etherfi.jpeg",
+    large: "https://assets.coingecko.com/coins/images/35958/large/etherfi.jpeg",
   },
   {
-      "id": "ethereum-pow-iou",
-      "name": "EthereumPoW",
-      "api_symbol": "ethereum-pow-iou",
-      "symbol": "ETHW",
-      "market_cap_rank": 193,
-      "thumb": "https://assets.coingecko.com/coins/images/26997/thumb/logo-clear.png",
-      "large": "https://assets.coingecko.com/coins/images/26997/large/logo-clear.png"
+    id: "ethereum-pow-iou",
+    name: "EthereumPoW",
+    api_symbol: "ethereum-pow-iou",
+    symbol: "ETHW",
+    market_cap_rank: 193,
+    thumb:
+      "https://assets.coingecko.com/coins/images/26997/thumb/logo-clear.png",
+    large:
+      "https://assets.coingecko.com/coins/images/26997/large/logo-clear.png",
   },
   {
-      "id": "stader-ethx",
-      "name": "Stader ETHx",
-      "api_symbol": "stader-ethx",
-      "symbol": "ETHX",
-      "market_cap_rank": 204,
-      "thumb": "https://assets.coingecko.com/coins/images/30870/thumb/staderx.png",
-      "large": "https://assets.coingecko.com/coins/images/30870/large/staderx.png"
+    id: "stader-ethx",
+    name: "Stader ETHx",
+    api_symbol: "stader-ethx",
+    symbol: "ETHX",
+    market_cap_rank: 204,
+    thumb: "https://assets.coingecko.com/coins/images/30870/thumb/staderx.png",
+    large: "https://assets.coingecko.com/coins/images/30870/large/staderx.png",
   },
   {
-      "id": "compound-ether",
-      "name": "cETH",
-      "api_symbol": "compound-ether",
-      "symbol": "CETH",
-      "market_cap_rank": 209,
-      "thumb": "https://assets.coingecko.com/coins/images/10643/thumb/ceth.png",
-      "large": "https://assets.coingecko.com/coins/images/10643/large/ceth.png"
+    id: "compound-ether",
+    name: "cETH",
+    api_symbol: "compound-ether",
+    symbol: "CETH",
+    market_cap_rank: 209,
+    thumb: "https://assets.coingecko.com/coins/images/10643/thumb/ceth.png",
+    large: "https://assets.coingecko.com/coins/images/10643/large/ceth.png",
   },
   {
-      "id": "vethor-token",
-      "name": "VeThor",
-      "api_symbol": "vethor-token",
-      "symbol": "VTHO",
-      "market_cap_rank": 240,
-      "thumb": "https://assets.coingecko.com/coins/images/5230/thumb/VTHO_Token_Icon.png",
-      "large": "https://assets.coingecko.com/coins/images/5230/large/VTHO_Token_Icon.png"
+    id: "vethor-token",
+    name: "VeThor",
+    api_symbol: "vethor-token",
+    symbol: "VTHO",
+    market_cap_rank: 240,
+    thumb:
+      "https://assets.coingecko.com/coins/images/5230/thumb/VTHO_Token_Icon.png",
+    large:
+      "https://assets.coingecko.com/coins/images/5230/large/VTHO_Token_Icon.png",
   },
   {
-      "id": "wrapped-beacon-eth",
-      "name": "Wrapped Beacon ETH",
-      "api_symbol": "wrapped-beacon-eth",
-      "symbol": "WBETH",
-      "market_cap_rank": 278,
-      "thumb": "https://assets.coingecko.com/coins/images/30061/thumb/wbeth-icon.png",
-      "large": "https://assets.coingecko.com/coins/images/30061/large/wbeth-icon.png"
-  }
+    id: "wrapped-beacon-eth",
+    name: "Wrapped Beacon ETH",
+    api_symbol: "wrapped-beacon-eth",
+    symbol: "WBETH",
+    market_cap_rank: 278,
+    thumb:
+      "https://assets.coingecko.com/coins/images/30061/thumb/wbeth-icon.png",
+    large:
+      "https://assets.coingecko.com/coins/images/30061/large/wbeth-icon.png",
+  },
 ];
 
 export const ethDefaultSelectedCoin = {
-  "id": "ethereum-classic",
-  "name": "Ethereum Classic",
-  "api_symbol": "ethereum-classic",
-  "symbol": "ETC",
-  "market_cap_rank": 28,
-  "thumb": "https://assets.coingecko.com/coins/images/453/thumb/ethereum-classic-logo.png",
-  "large": "https://assets.coingecko.com/coins/images/453/large/ethereum-classic-logo.png"
+  id: "ethereum-classic",
+  name: "Ethereum Classic",
+  api_symbol: "ethereum-classic",
+  symbol: "ETC",
+  market_cap_rank: 28,
+  thumb:
+    "https://assets.coingecko.com/coins/images/453/thumb/ethereum-classic-logo.png",
+  large:
+    "https://assets.coingecko.com/coins/images/453/large/ethereum-classic-logo.png",
 };
 
 export const ethDefaultPriceHistory = {

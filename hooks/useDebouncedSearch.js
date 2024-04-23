@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 const searchDebounceTime = 1000;
 
@@ -11,7 +11,7 @@ const useDebouncedSearch = (searchTerm, apiCall, resHandler, errHandler) => {
     }
 
     debounceTimer.current = setTimeout(() => {
-      if(searchTerm) {
+      if (searchTerm) {
         apiCall(searchTerm, resHandler, errHandler);
       } else {
         resHandler(null);
@@ -20,8 +20,8 @@ const useDebouncedSearch = (searchTerm, apiCall, resHandler, errHandler) => {
 
     return () => {
       debounceTimer.current && clearTimeout(debounceTimer.current);
-    }
+    };
   }, [searchTerm, apiCall, resHandler, errHandler]);
-}
+};
 
 export default useDebouncedSearch;

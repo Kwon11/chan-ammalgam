@@ -14,7 +14,9 @@ const CoinSearchContext = createContext();
 export const CoinSearchContextProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState();
   const [selectedCoin, setSelectedCoin] = useState(ethDefaultSelectedCoin);
-  const [selectedTokenAddress, setSelectedTokenAddress] = useState(ethDefaultTokenAddress);
+  const [selectedTokenAddress, setSelectedTokenAddress] = useState(
+    ethDefaultTokenAddress
+  );
   const [priceHistory, setPriceHistory] = useState(ethDefaultPriceHistory);
   const [walletAddress, setWalletAddress] = useState(useAccount().address);
 
@@ -24,9 +26,11 @@ export const CoinSearchContextProvider = ({ children }) => {
       fetchTokenAddressGecko(
         selectedCoin.id,
         (res) => setSelectedTokenAddress(res.platforms.ethereum),
-        e => console.log(e)
+        (e) => console.log(e)
       );
-      fetchPriceHistoryGecko(selectedCoin.id, setPriceHistory, (e) => console.log(e));
+      fetchPriceHistoryGecko(selectedCoin.id, setPriceHistory, (e) =>
+        console.log(e)
+      );
     }
   }, [selectedCoin]);
 
