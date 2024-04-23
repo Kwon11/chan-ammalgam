@@ -1,15 +1,16 @@
 import { createChart, ColorType } from "lightweight-charts";
 import { useEffect, useRef } from "react";
+import styled from 'styled-components';
 
 const ChartComponent = (props) => {
   const {
     data,
     colors: {
-      backgroundColor = "white",
-      lineColor = "#2962FF",
-      textColor = "black",
-      areaTopColor = "#2962FF",
-      areaBottomColor = "rgba(41, 98, 255, 0.28)",
+      backgroundColor = "#081B44",
+      lineColor = "#009580",
+      textColor = "white",
+      areaTopColor = "#043235",
+      areaBottomColor = "#043235",
     } = {},
   } = props;
 
@@ -26,7 +27,7 @@ const ChartComponent = (props) => {
         textColor,
       },
       width: chartContainerRef.current.clientWidth,
-      height: 300,
+      height: 250,
     });
     chart.timeScale().fitContent();
 
@@ -54,11 +55,23 @@ const ChartComponent = (props) => {
   ]);
 
   return (
-    <div>
+    <ChartContainer>
       {props.label}
-      <div ref={chartContainerRef} />
-    </div>
+      <Chart ref={chartContainerRef} />
+    </ChartContainer>
   );
 };
+
+const ChartContainer = styled.div`
+  margin-bottom: 20px;
+  height: 30%;
+  width: 100%;
+  padding: 3%;
+  border-radius: 20px;
+`;
+const Chart = styled.div`
+  width: 100%;
+  max-height: 60%;
+`;
 
 export default ChartComponent;

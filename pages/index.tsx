@@ -15,7 +15,7 @@ const fontSans = FontSans({
 import { CoinSearchContextProvider } from "../contexts/CoinSearchContext.js";
 import SelectedCoinDisplay from "../components/SelectedCoinDisplay.js";
 import CoinSearch from "../components/CoinSearch.js";
-import Charts from '../components/Charts.js';
+import Charts from "../components/Charts.js";
 
 const Home: NextPage = () => {
   return (
@@ -25,7 +25,13 @@ const Home: NextPage = () => {
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable
         )}
-        style={{height: "100vh", width: "100vw"}}
+        style={{
+          height: "100vh",
+          width: "100vw",
+          // backgroundColor: "#131313",
+          background: 'linear-gradient(to bottom left, #04373A 0%, black 40%, black 60%, #04373A 80%)',
+          color: "#FFFFFF",
+        }}
       >
         <Head>
           <title>RainbowKit App</title>
@@ -35,9 +41,9 @@ const Home: NextPage = () => {
           />
           <link href="/favicon.ico" rel="icon" />
         </Head>
-        <div style={{height: '100%'}}>
-          <div style={{position: "fixed", top: "0px", right: "0px"}}>
-            <ConnectButton/>
+        <div style={{ height: "100%" }}>
+          <div style={{ position: "fixed", top: "0px", right: "0px" }}>
+            <ConnectButton />
           </div>
           <Heading>
             Welcome to Ammalgam!<br></br>
@@ -65,7 +71,7 @@ const MainContainer = styled.div`
   align-items: center;
   padding: 0 5%;
   width: 50%;
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     width: 100%;
   }
 `;
@@ -74,7 +80,7 @@ const HorizontalContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     flex-direction: column;
   }
 `;

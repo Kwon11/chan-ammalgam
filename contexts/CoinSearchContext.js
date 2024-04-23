@@ -30,7 +30,7 @@ export const CoinSearchContextProvider = ({ children }) => {
         (res) => setSelectedTokenAddress(res.platforms.ethereum),
         console.log
       );
-      fetchPriceHistoryGecko(selectedCoin.id, setPriceHistory, console.log);
+      fetchPriceHistoryGecko(selectedCoin.id, setPriceHistory, (e) => console.log(e));
     }
   }, [selectedCoin]);
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { useCoinSearchContext } from "../contexts/CoinSearchContext";
 import useDebouncedSearch from "../hooks/useDebouncedSearch.js";
 import searchGecko from "../utils/searchGecko.js";
@@ -22,10 +22,10 @@ const CoinSearch = () => {
     setSearchTerm(e.target.value);
   };
 
-  const searchResHandler = (result) => {
+  const searchResHandler = useCallback((result) => {
     result && setSearchResults(result.coins);
-  };
-  const searchErrHandler = (err) => console.log(err);
+  }, [setSearchResults]);
+  const searchErrHandler = useCallback((err) => console.log(err), []);
   useDebouncedSearch(
     searchTerm,
     searchGecko,
@@ -34,7 +34,11 @@ const CoinSearch = () => {
   );
 
   return (
-    <Command>
+    <Command
+      style={{
+        height: "640px",
+      }}
+    >
       <CommandInput
         placeholder={searchTerm || "Search for an ERC20 Token"}
         type="text"
@@ -42,7 +46,7 @@ const CoinSearch = () => {
         id="coinSearchInput"
         name="coinSearchInput"
       />
-      <CommandList>
+      <CommandList style={{overflow: 'visible', height: '100%'}}>
         <CommandEmpty>No results found.</CommandEmpty>
         {searchResults && searchResults.length && (
           <CommandGroup heading="results">
