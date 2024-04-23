@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useRootContext } from '../contexts/RootContext';
+import { useCoinSearchContext } from '../contexts/CoinSearchContext';
 
 const CoinsDisplay = ({ coins }) => {
   return (
@@ -10,7 +10,7 @@ const CoinsDisplay = ({ coins }) => {
 };
 
 const CoinDisplay = ({ coin }) => {
-  const { setSelectedCoin } = useRootContext();
+  const { setSelectedCoin } = useCoinSearchContext();
   const { name, symbol, thumb } = coin;
   return (
     <CoinDisplayContainer onClick={() => setSelectedCoin(coin)}>

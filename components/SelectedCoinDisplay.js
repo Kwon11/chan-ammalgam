@@ -1,47 +1,17 @@
 import { useState, useEffect } from 'react';
-import { useRootContext } from '../contexts/RootContext';
+import { useCoinSearchContext } from '../contexts/CoinSearchContext';
 import styled from 'styled-components';
-import { useBalance, useReadContract, useAccount, erc20ABI, wagmiContractConfig } from 'wagmi';
-import fetchTokenAddressGecko from '../utils/fetchTokenAddressGecko.js';
-
-// import { WagmiConfig, createClient, configureChains, defaultChains } from 'wagmi';
-// import { publicProvider } from 'wagmi/providers/public';
-// const { provider } = configureChains(defaultChains, [publicProvider()]);
-// const client = createClient({
-//   autoConnect: true,
-//   provider,
-// })
 
 export const SelectedCoinDisplay = (coin) => {
-  const { selectedCoin } = useRootContext();
-  // const { coinBalance, setCoinBalance } = useState();
-  // const { tokenAddress, setTokenAddress } = useState();
-
-
-  const address = useAccount().address;
-  const ethereumNameServiceAddress = "0xc18360217d8f7ab5e7c516566761ea12ce7f9d72";
-  const result = useBalance({
-    address: address,
-    token: ethereumNameServiceAddress,
-  });
-  console.log('BALANCE', result, result.data);
-
-  useEffect(() => {
-    const tokenAddressResHandler = (data) => {
-      console.log('TOKEN ADDRESS RESPONSE', data);
-    };
-    const tokenAddressErrHandler = e => console.log('tokenAddressError', e); // chankwontodo
-    console.log('selectedCoin', selectedCoin);
-    if(selectedCoin && selectedCoin.id) fetchTokenAddressGecko(selectedCoin.id, tokenAddressResHandler, tokenAddressErrHandler);
-
-
-  },[selectedCoin]);
+  const { selectedCoin } = useCoinSearchContext();
+  const { coinBalance } = useCoinSearchContext();
+  const { tokenAddress } = useCoinSearchContext();
 
   return selectedCoin ? (
       <SelectedCoinContainer>
         <CoinImage src={selectedCoin.large} alt={selectedCoin.name}/>
         <CoinName>{selectedCoin.name}</CoinName>
-        <Balance>100$</Balance>
+        {coinBalance && <Balance>{`${coinBalance.formatted}${coinBalance.symbol}`}</Balance>}
       </SelectedCoinContainer>
   ): 'SELECT A COIN FOOL';
 };

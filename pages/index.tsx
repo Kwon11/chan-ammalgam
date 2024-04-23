@@ -4,13 +4,13 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { HomeContainer, MainContainer } from '../styles/StyledComponents.js';
 
-import { RootContextProvider } from '../contexts/RootContext.js';
+import { CoinSearchContextProvider } from '../contexts/CoinSearchContext.js';
 import SelectedCoinDisplay from '../components/SelectedCoinDisplay.js';
 import CoinSearch from '../components/CoinSearch.js';
 
 const Home: NextPage = () => {
   return (
-    <RootContextProvider>
+    <CoinSearchContextProvider>
       <HomeContainer>
         <Head>
           <title>RainbowKit App</title>
@@ -30,7 +30,7 @@ const Home: NextPage = () => {
           <CoinSearch />
         </MainContainer>
       </HomeContainer>
-    </RootContextProvider>
+    </CoinSearchContextProvider>
   );
 };
 

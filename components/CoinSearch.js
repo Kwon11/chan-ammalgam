@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { useRootContext } from '../contexts/RootContext';
+import { useCoinSearchContext } from '../contexts/CoinSearchContext';
 import { Input } from '../styles/StyledComponents.js';
 import useDebouncedSearch from '../hooks/useDebouncedSearch.js';
 import searchGecko from '../utils/searchGecko.js';
 import CoinsDisplay from './CoinsDisplay.js';
 
 const CoinSearch = () => {
-  const { searchTerm, setSearchTerm } = useRootContext();
+  const { searchTerm, setSearchTerm } = useCoinSearchContext();
   const [ searchResults, setSearchResults ] = useState();
 
   const handleChange = (e) => {
@@ -15,7 +15,6 @@ const CoinSearch = () => {
   };
 
   const searchResHandler = (result) => {
-    console.log('results', result);
     setSearchResults(result.coins);
   };
   const searchErrHandler = err => console.log(err);
