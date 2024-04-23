@@ -30,6 +30,9 @@ const SelectedCoinContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  @media (max-width: 768px) {
+    margin: 20px 0px;
+  }
 `;
 const CoinImage = styled.img`
   width: 150px;
@@ -39,6 +42,9 @@ const CoinName = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 768px) {
+    margin: 20px 0px;
+  }
 `;
 const Balance = styled.div`
   height: 20px;

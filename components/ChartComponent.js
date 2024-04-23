@@ -27,7 +27,7 @@ const ChartComponent = (props) => {
         textColor,
       },
       width: chartContainerRef.current.clientWidth,
-      height: 250,
+      height: 230,
     });
     chart.timeScale().fitContent();
 
@@ -55,7 +55,7 @@ const ChartComponent = (props) => {
   ]);
 
   return (
-    <ChartContainer>
+    <ChartContainer showOnMobile={props.label === "Price"}>
       {props.label}
       <Chart ref={chartContainerRef} />
     </ChartContainer>
@@ -64,10 +64,14 @@ const ChartComponent = (props) => {
 
 const ChartContainer = styled.div`
   margin-bottom: 20px;
-  height: 30%;
+  height: 29%;
   width: 100%;
-  padding: 3%;
+  padding: 0 3%;
   border-radius: 20px;
+  box-sizing: border-box;
+  @media (max-width: 768px) {
+    ${({showOnMobile}) => showOnMobile ? '' : 'display: none'};
+  }
 `;
 const Chart = styled.div`
   width: 100%;

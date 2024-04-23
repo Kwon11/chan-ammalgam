@@ -58,7 +58,7 @@ const CoinSearch = () => {
 
 const Container = styled.div`
   width: 100%;
-  height: 66%;
+  height: 61%;
   overflow: hidden;
 `;
 const Input = styled.input`
@@ -66,8 +66,14 @@ const Input = styled.input`
   height: 40px;
   border-radius: 20px;
   padding: 0 10px;
+  box-sizing: border-box;
   background-color: #131313;
   color: #9b9b9b;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  &:inactive,
   &:hover,
   &:active,
   &:focus {
@@ -79,6 +85,7 @@ const Input = styled.input`
 const List = styled.div`
   width: 100%;
   padding: 0 0 0 5px;
+  box-sizing: border-box;
 `;
 const CoinItem = styled.div`
   width: 100%;

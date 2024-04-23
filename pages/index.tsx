@@ -11,17 +11,7 @@ import Charts from "../components/Charts.js";
 const Home: NextPage = () => {
   return (
     <CoinSearchContextProvider>
-      <div
-        style={{
-          height: "100vh",
-          width: "100vw",
-          background:
-            "linear-gradient(to bottom left, #04373A 0%, black 40%, black 60%, #04373A 80%)",
-          color: "#d6d6d6",
-          padding: "0",
-          margin: "0",
-        }}
-      >
+      <RootContainer>
         <Head>
           <title>RainbowKit App</title>
           <meta
@@ -48,17 +38,30 @@ const Home: NextPage = () => {
             </MainContainer>
           </HorizontalContainer>
         </div>
-      </div>
+      </RootContainer>
     </CoinSearchContextProvider>
   );
 };
 
+const RootContainer = styled.div`
+  height: 100vh;
+  width: 100vw;
+  color: #d6d6d6;
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to bottom left, #04373A 0%, black 40%, black 60%, #04373A 80%);
+  @media (max-width: 768px) {
+    background: black;
+    height: fit-content;
+  }
+`;
 const MainContainer = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 5%;
+  box-sizing: border-box;
   width: 50%;
   @media (max-width: 768px) {
     width: 100%;
@@ -82,7 +85,10 @@ const Heading = styled.h1`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 0px;
+  margin: 0;
+  @media (max-width: 768px) {
+    padding: 20px 0px;
+  }
 `;
 
 export default Home;
