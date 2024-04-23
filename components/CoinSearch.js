@@ -6,7 +6,7 @@ import searchGecko from '../utils/searchGecko.js';
 import CoinsDisplay from './CoinsDisplay.js';
 
 const CoinSearch = () => {
-  const { searchTerm, setSearchTerm } = useCoinSearchContext();
+  const { searchTerm, setSearchTerm, priceHistory } = useCoinSearchContext();
   const [ searchResults, setSearchResults ] = useState();
 
   const handleChange = (e) => {

@@ -1,11 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useBalance } from 'wagmi';
 import { useCoinSearchContext } from '../contexts/CoinSearchContext';
 import styled from 'styled-components';
 
 export const SelectedCoinDisplay = (coin) => {
-  const { selectedCoin } = useCoinSearchContext();
-  const { coinBalance } = useCoinSearchContext();
-  const { tokenAddress } = useCoinSearchContext();
+  const { selectedCoin, selectedTokenAddress, walletAddress } = useCoinSearchContext();
+
+  const balanceResponse = useBalance({
+    address: walletAddress,
+    token: selectedTokenAddress,
+  });
+  const coinBalance = balanceResponse.data;
+  console.log('coinBalance', coinBalance);
 
   return selectedCoin ? (
       <SelectedCoinContainer>
