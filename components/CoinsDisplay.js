@@ -1,3 +1,4 @@
+// chantodo: delete this file
 import styled from "styled-components";
 import { useCoinSearchContext } from '../contexts/CoinSearchContext';
 

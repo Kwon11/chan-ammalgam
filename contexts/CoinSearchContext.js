@@ -7,9 +7,19 @@ import fetchPriceHistoryGecko from '../utils/fetchPriceHistoryGecko.js';
 
 const CoinSearchContext = createContext();
 
+const ethereum = {
+  "id": "ethereum-classic",
+  "name": "Ethereum Classic",
+  "api_symbol": "ethereum-classic",
+  "symbol": "ETC",
+  "market_cap_rank": 28,
+  "thumb": "https://assets.coingecko.com/coins/images/453/thumb/ethereum-classic-logo.png",
+  "large": "https://assets.coingecko.com/coins/images/453/large/ethereum-classic-logo.png"
+};
+
 export const CoinSearchContextProvider = ({ children }) => {
-  const [searchTerm, setSearchTerm] = useLocalStorage('searchTerm', 'no previous searches');
-  const [selectedCoin, setSelectedCoin] = useState();
+  const [searchTerm, setSearchTerm] = useState('searchTerm', 'no previous searches');
+  const [selectedCoin, setSelectedCoin] = useState(ethereum);
   const [selectedTokenAddress, setSelectedTokenAddress] = useState();
   const [priceHistory, setPriceHistory] = useState();
   const [walletAddress, setWalletAddress] = useState(useAccount().address);

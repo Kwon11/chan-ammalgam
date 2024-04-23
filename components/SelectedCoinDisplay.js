@@ -1,28 +1,32 @@
-import { useBalance } from 'wagmi';
-import { useCoinSearchContext } from '../contexts/CoinSearchContext';
-import styled from 'styled-components';
+import { useBalance } from "wagmi";
+import { useCoinSearchContext } from "../contexts/CoinSearchContext";
+import styled from "styled-components";
 
 export const SelectedCoinDisplay = (coin) => {
-  const { selectedCoin, selectedTokenAddress, walletAddress } = useCoinSearchContext();
+  const { selectedCoin, selectedTokenAddress, walletAddress } =
+    useCoinSearchContext();
+  console.log("selectedCoin", selectedCoin);
 
   const balanceResponse = useBalance({
     address: walletAddress,
     token: selectedTokenAddress,
   });
   const coinBalance = balanceResponse.data;
-  console.log('coinBalance', coinBalance);
+  console.log("coinBalance", coinBalance);
 
-  return selectedCoin ? (
-      <SelectedCoinContainer>
-        <CoinImage src={selectedCoin.large} alt={selectedCoin.name}/>
-        <CoinName>{selectedCoin.name}</CoinName>
-        {coinBalance && <Balance>{`${coinBalance.formatted}${coinBalance.symbol}`}</Balance>}
-      </SelectedCoinContainer>
-  ): 'SELECT A COIN FOOL';
+  return (
+    <SelectedCoinContainer>
+      <CoinImage src={selectedCoin.large} alt={selectedCoin.name} />
+      <CoinName>{selectedCoin.name}</CoinName>
+      {coinBalance && (
+        <Balance>{`${coinBalance.formatted}${coinBalance.symbol}`}</Balance>
+      )}
+    </SelectedCoinContainer>
+  );
 };
 
 const SelectedCoinContainer = styled.div`
-  width: 300px; 
+  width: 300px;
   height: 300px;
   display: flex;
   flex-direction: column;

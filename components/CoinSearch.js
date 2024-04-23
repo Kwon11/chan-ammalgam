@@ -1,47 +1,86 @@
-import React, { useState } from 'react';
-import { useCoinSearchContext } from '../contexts/CoinSearchContext';
-import { Input } from '../styles/StyledComponents.js';
-import useDebouncedSearch from '../hooks/useDebouncedSearch.js';
-import searchGecko from '../utils/searchGecko.js';
-import CoinsDisplay from './CoinsDisplay.js';
+import React, { useState } from "react";
+import { useCoinSearchContext } from "../contexts/CoinSearchContext";
+import { Input } from "../styles/StyledComponents.js";
+import useDebouncedSearch from "../hooks/useDebouncedSearch.js";
+import searchGecko from "../utils/searchGecko.js";
+
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
 
 const CoinSearch = () => {
-  const { searchTerm, setSearchTerm, priceHistory } = useCoinSearchContext();
-  const [ searchResults, setSearchResults ] = useState();
+  const { searchTerm, setSearchTerm, setSelectedCoin } = useCoinSearchContext();
+  const [searchResults, setSearchResults] = useState();
 
   const handleChange = (e) => {
     e.preventDefault();
-    setSearchTerm(e.target.value)
+    setSearchTerm(e.target.value);
   };
 
   const searchResHandler = (result) => {
     setSearchResults(result.coins);
   };
-  const searchErrHandler = err => console.log(err);
-  useDebouncedSearch(searchTerm, searchGecko, searchResHandler, searchErrHandler);
+  const searchErrHandler = (err) => console.log(err);
+  useDebouncedSearch(
+    searchTerm,
+    searchGecko,
+    searchResHandler,
+    searchErrHandler
+  );
 
   return (
-    <CoinSearchContainer>
-      <Input
-        value={searchTerm}
+    <Command>
+      <CommandInput
+        placeholder={searchTerm || "Search for an ERC20 Token"}
         type="text"
-        onChange={handleChange}
+        onChangeCapture={handleChange}
         id="coinSearchInput"
         name="coinSearchInput"
       />
-      <CoinsDisplay coins={searchResults} />
-    </CoinSearchContainer>
-  )
+      <CommandList>
+        <CommandEmpty>No results found.</CommandEmpty>
+        {searchResults && searchResults.length && (
+          <CommandGroup heading="results">
+            {searchResults &&
+              searchResults.map((coin) => {
+                const { id, name, symbol, thumb } = coin;
+                return (
+                  <CommandItem key={id} onSelect={() => setSelectedCoin(coin)}>
+                    <CoinName>{name}</CoinName>
+                    <IconAndSymbolContainer>
+                      <CoinSymbol>{symbol}</CoinSymbol>
+                      <CoinIcon src={thumb} alt={name} />
+                    </IconAndSymbolContainer>
+                  </CommandItem>
+                );
+              })}
+          </CommandGroup>
+        )}
+      </CommandList>
+    </Command>
+  );
 };
 
 // CHANTODO: move this somewhere intelligent
-import styled from 'styled-components';
-const CoinSearchContainer = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+import styled from "styled-components";
+const CoinName = styled.div`
+  height: 20px;
+  width: 70%;
 `;
-
+const IconAndSymbolContainer = styled.div`
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+`;
+const CoinSymbol = styled.div`
+  height: 20px;
+`;
+const CoinIcon = styled.img`
+  height: 20px;
+`;
 export default CoinSearch;

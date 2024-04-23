@@ -1,30 +1,32 @@
-import { ConnectButton } from '@rainbow-me/rainbowkit';
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import type { NextPage } from "next";
+import Head from "next/head";
 import { Inter as FontSans } from "next/font/google";
+import styled from "styled-components";
 
 import { cn } from "../@/lib/utils";
-// chantodo: fix this importing
-// font is not fonting
- 
+// chantodo: figure out what went wrong with shadcn installation, should not require "../@"
+
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
-})
+});
 
-import styles from '../styles/Home.module.css';
-
-import { CoinSearchContextProvider } from '../contexts/CoinSearchContext.js';
-import SelectedCoinDisplay from '../components/SelectedCoinDisplay.js';
-import CoinSearch from '../components/CoinSearch.js';
+import { CoinSearchContextProvider } from "../contexts/CoinSearchContext.js";
+import SelectedCoinDisplay from "../components/SelectedCoinDisplay.js";
+import CoinSearch from "../components/CoinSearch.js";
+import Charts from '../components/Charts.js';
 
 const Home: NextPage = () => {
   return (
     <CoinSearchContextProvider>
-      <div className={cn(
-        "min-h-screen bg-background font-sans antialiased",
-        fontSans.variable
-      )}>
+      <div
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
+        )}
+        style={{height: "100vh", width: "100vw"}}
+      >
         <Head>
           <title>RainbowKit App</title>
           <meta
@@ -33,18 +35,58 @@ const Home: NextPage = () => {
           />
           <link href="/favicon.ico" rel="icon" />
         </Head>
-        <div>
-          <ConnectButton />
-          <h1 className={styles.title}>
-            Welcome to <a href="">Ammalgam</a>!<br></br>
+        <div style={{height: '100%'}}>
+          <div style={{position: "fixed", top: "0px", right: "0px"}}>
+            <ConnectButton/>
+          </div>
+          <Heading>
+            Welcome to Ammalgam!<br></br>
             Select a coin to search!
-          </h1>
-          <SelectedCoinDisplay />
-          <CoinSearch />
+          </Heading>
+          <HorizontalContainer>
+            <MainContainer>
+              <Charts />
+            </MainContainer>
+            <MainContainer>
+              <SelectedCoinDisplay />
+              <CoinSearch />
+            </MainContainer>
+          </HorizontalContainer>
         </div>
       </div>
     </CoinSearchContextProvider>
   );
 };
+
+const MainContainer = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 5%;
+  width: 50%;
+  @media(max-width: 768px) {
+    width: 100%;
+  }
+`;
+const HorizontalContainer = styled.div`
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  @media(max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+const Heading = styled.h1`
+  height: 20%;
+  width: 100%;
+  line-height: 1;
+  font-size: 2.5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 export default Home;
