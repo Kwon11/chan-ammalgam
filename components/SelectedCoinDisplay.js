@@ -5,7 +5,6 @@ import styled from "styled-components";
 export const SelectedCoinDisplay = (coin) => {
   const { selectedCoin, selectedTokenAddress, walletAddress } =
     useCoinSearchContext();
-  console.log("selectedCoin", selectedCoin);
 
   const balanceResponse = useBalance({
     address: walletAddress,

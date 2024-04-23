@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useCoinSearchContext } from "../contexts/CoinSearchContext";
-import { Input } from "../styles/StyledComponents.js";
 import useDebouncedSearch from "../hooks/useDebouncedSearch.js";
 import searchGecko from "../utils/searchGecko.js";
+import styled from "styled-components";
 
 import {
   Command,
@@ -23,7 +23,7 @@ const CoinSearch = () => {
   };
 
   const searchResHandler = (result) => {
-    setSearchResults(result.coins);
+    result && setSearchResults(result.coins);
   };
   const searchErrHandler = (err) => console.log(err);
   useDebouncedSearch(
@@ -66,8 +66,6 @@ const CoinSearch = () => {
   );
 };
 
-// CHANTODO: move this somewhere intelligent
-import styled from "styled-components";
 const CoinName = styled.div`
   height: 20px;
   width: 70%;
