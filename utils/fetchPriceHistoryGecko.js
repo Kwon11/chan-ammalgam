@@ -2,7 +2,7 @@ import apiKey from "./common.js";
 
 const fetchPriceHistoryGecko = (tokenId, resHandler, errHandler) => {
   fetch(
-    `https://api.coingecko.com/api/v3/coins/${tokenId}/market_chart?days=${7}&vs_currency=${"usd"}`,
+    `https://api.coingecko.com/api/v3/coins/${tokenId}/market_chart?days=${30}&vs_currency=${"usd"}`,
     {
       method: "GET",
       headers: {
