@@ -17,7 +17,7 @@ export const SelectedCoinDisplay = (coin) => {
       <CoinImage src={selectedCoin.large} alt={selectedCoin.name} />
       <CoinName>{selectedCoin.name}</CoinName>
       {coinBalance && (
-        <Balance>{`${coinBalance.formatted}${coinBalance.symbol}`}</Balance>
+        <Balance>{`Your Balance: ${coinBalance.formatted}${coinBalance.symbol}`}</Balance>
       )}
     </SelectedCoinContainer>
   );
