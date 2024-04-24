@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { useAccount } from "wagmi";
 
 import fetchTokenAddressGecko from "../utils/fetchTokenAddressGecko.js";
 import fetchPriceHistoryGecko from "../utils/fetchPriceHistoryGecko.js";
@@ -18,7 +17,6 @@ export const CoinSearchContextProvider = ({ children }) => {
     ethDefaultTokenAddress
   );
   const [priceHistory, setPriceHistory] = useState(ethDefaultPriceHistory);
-  const [walletAddress, setWalletAddress] = useState(useAccount().address);
 
   useEffect(() => {
     if (selectedCoin && selectedCoin.id) {
@@ -41,7 +39,6 @@ export const CoinSearchContextProvider = ({ children }) => {
     setSelectedCoin,
     selectedTokenAddress,
     setSelectedTokenAddress,
-    walletAddress,
     priceHistory,
     setPriceHistory,
   };

@@ -1,11 +1,13 @@
 import { useBalance } from "wagmi";
 import { useCoinSearchContext } from "../contexts/CoinSearchContext";
 import styled from "styled-components";
+import { useAccount } from "wagmi";
 
 export const SelectedCoinDisplay = (coin) => {
-  const { selectedCoin, selectedTokenAddress, walletAddress } =
+  const { selectedCoin, selectedTokenAddress} =
     useCoinSearchContext();
 
+  const walletAddress = useAccount().address;
   const balanceResponse = useBalance({
     address: walletAddress,
     token: selectedTokenAddress,
