@@ -1,7 +1,7 @@
 ## Notes from Chan:
 Hi, this is my submission for the tech assessment. Check it out at [https://chan-ammalgam.vercel.app/](https://chan-ammalgam.vercel.app/)
 
-Note: I'm running into the rate limiter after a minute or so of running the app. The demo API key is limited to 30 calls per minute. I have hard coded ethereum values to demo the UI. If the chart/balance stop updating, please check the console to see if there is an "ERROR 429 (Too Many Requests)"
+Note: I'm running into the rate limiter after a minute or so of running the app. The demo API key is limited to 30 calls per minute. I have hard coded ethereum values to demo the UI. If the chart/balance stop updating, please check the console to see if there is an "ERROR 429 (Too Many Requests)". The coin selection from a list of results will still fetch the thumbnail but wallet balance and chart data will not update when coinGecko is blocked.
 
 I didn't have time to test it extensively, but only one call for token address and one call for price history goes to the coinGecko API on each coinSelect, so I dont think I am making superfluous calls. I left console logs on each fetch to support my innocence.
 
