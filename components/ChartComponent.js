@@ -27,7 +27,7 @@ const ChartComponent = (props) => {
         textColor,
       },
       width: chartContainerRef.current.clientWidth,
-      height: 230,
+      height: 200,
     });
     chart.timeScale().fitContent();
 
@@ -64,18 +64,20 @@ const ChartComponent = (props) => {
 
 const ChartContainer = styled.div`
   margin-bottom: 20px;
-  height: 29%;
+  height: 230px;
   width: 100%;
   padding: 0 3%;
   border-radius: 20px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   @media (max-width: 768px) {
     ${({showOnMobile}) => showOnMobile ? '' : 'display: none'};
   }
 `;
 const Chart = styled.div`
   width: 100%;
-  max-height: 60%;
 `;
 
 export default ChartComponent;

@@ -21,12 +21,12 @@ const Home: NextPage = () => {
           <link href="/favicon.ico" rel="icon" />
         </Head>
         <div style={{ height: "100%" }}>
-          <div style={{ position: "fixed", top: "0px", right: "0px" }}>
+          <div style={{ position: "absolute", top: "10px", right: "10px" }}>
             <ConnectButton />
           </div>
           <Heading>
             Welcome to Ammalgam!<br></br>
-            Select a coin to search!
+            Search and select a coin!
           </Heading>
           <HorizontalContainer>
             <MainContainer>
@@ -51,7 +51,7 @@ const RootContainer = styled.div`
   margin: 0;
   background: linear-gradient(to bottom left, #04373A 0%, black 40%, black 60%, #04373A 80%);
   @media (max-width: 768px) {
-    background: black;
+    background: linear-gradient(to left, #04373A 0%, black 40%, black 60%, #04373A 100%);
     height: fit-content;
   }
 `;
@@ -87,7 +87,7 @@ const Heading = styled.h1`
   justify-content: center;
   margin: 0;
   @media (max-width: 768px) {
-    padding: 20px 0px;
+    padding: 50px 0px 20px 0px;
   }
 `;
 

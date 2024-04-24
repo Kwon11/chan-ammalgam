@@ -27,7 +27,7 @@ export const SelectedCoinDisplay = (coin) => {
 
 const SelectedCoinContainer = styled.div`
   width: 300px;
-  height: 25%;
+  height: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,7 +49,12 @@ const CoinName = styled.div`
   }
 `;
 const Balance = styled.div`
-  height: 20px;
+  height: 50px;
+  padding: 10px 0 10px;
+  @media (max-width: 768px) {
+    height: 30px;
+    padding: 5px 0 5px;
+  }
 `;
 
 export default SelectedCoinDisplay;

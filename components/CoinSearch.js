@@ -38,7 +38,7 @@ const CoinSearch = () => {
         id="coinSearchInput"
         name="coinSearchInput"
       />
-      <List style={{ overflow: "visible", height: "100%" }}>
+      <List>
         {searchResults.map((coin) => {
           const { id, name, symbol, thumb } = coin;
           return (
@@ -58,7 +58,7 @@ const CoinSearch = () => {
 
 const Container = styled.div`
   width: 100%;
-  height: 61%;
+  height: 65%;
   overflow: hidden;
 `;
 const Input = styled.input`
@@ -86,6 +86,12 @@ const List = styled.div`
   width: 100%;
   padding: 0 0 0 5px;
   box-sizing: border-box;
+  overflow: visible;
+  height: 100%;
+  @media (max-width: 768px) {
+    height: 450px;
+    overflow: hidden;
+  }
 `;
 const CoinItem = styled.div`
   width: 100%;
