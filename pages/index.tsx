@@ -87,7 +87,8 @@ const Heading = styled.h1`
   justify-content: center;
   margin: 0;
   @media (max-width: 768px) {
-    padding: 50px 0px 20px 0px;
+    padding: 60px 0px 20px 0px;
+    font-size: 1.5rem;
   }
 `;
 

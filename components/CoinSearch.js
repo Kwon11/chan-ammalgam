@@ -3,11 +3,13 @@ import { useCoinSearchContext } from "../contexts/CoinSearchContext";
 import useDebouncedSearch from "../hooks/useDebouncedSearch.js";
 import searchGecko from "../utils/searchGecko.js";
 import styled from "styled-components";
+import ErrorDisplay from './ErrorDisplay.js';
 import { ethDefaultSearchResults } from "@/utils/ethereumDefaults";
 
 const CoinSearch = () => {
   const { searchTerm, setSearchTerm, setSelectedCoin } = useCoinSearchContext();
   const [searchResults, setSearchResults] = useState(ethDefaultSearchResults);
+  const [searchError, setSearchError] = useState(false);
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -16,11 +18,15 @@ const CoinSearch = () => {
 
   const searchResHandler = useCallback(
     (result) => {
+      setSearchError(false);
       result && setSearchResults(result.coins);
     },
     [setSearchResults]
   );
-  const searchErrHandler = useCallback((err) => console.log(err), []);
+  const searchErrHandler = useCallback((err) => {
+    setSearchError(true);
+    console.log("fetch error chan 1", err);
+  }, []);
   useDebouncedSearch(
     searchTerm,
     searchGecko,
@@ -39,6 +45,9 @@ const CoinSearch = () => {
         name="coinSearchInput"
       />
       <List>
+        <ErrorDisplay show={searchError} style={{ justifyContent: "center" }}>
+          The search ran into an error, results may not update. Please try later
+        </ErrorDisplay>
         {searchResults.map((coin) => {
           const { id, name, symbol, thumb } = coin;
           return (

@@ -55,7 +55,7 @@ const ChartComponent = (props) => {
   ]);
 
   return (
-    <ChartContainer showOnMobile={props.label === "Price"}>
+    <ChartContainer showOnMobile={props.showOnMobile}>
       {props.label}
       <Chart ref={chartContainerRef} />
     </ChartContainer>

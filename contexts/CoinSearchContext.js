@@ -17,17 +17,37 @@ export const CoinSearchContextProvider = ({ children }) => {
     ethDefaultTokenAddress
   );
   const [priceHistory, setPriceHistory] = useState(ethDefaultPriceHistory);
+  const [tokenAddressError, setTokenAddressError] = useState(false);
+  const [priceHistoryError, setPriceHistoryError] = useState(false);
+
+  const createSuccessHandler = (successHandlerCb, setErrorCb) => {
+    return (res) => {
+      setErrorCb(false);
+      successHandlerCb(res);
+    };
+  };
+  const createErrorHandler = (setErrorCb) => {
+    return (e) => {
+      setErrorCb(true);
+      console.log("error fetching", e);
+    };
+  };
 
   useEffect(() => {
     if (selectedCoin && selectedCoin.id) {
-      // chantodo make real error handler with UI
       fetchTokenAddressGecko(
         selectedCoin.id,
-        (res) => setSelectedTokenAddress(res.platforms.ethereum),
-        (e) => console.log(e)
+        (res) =>
+          createSuccessHandler(
+            setSelectedTokenAddress,
+            setTokenAddressError
+          )(res.platforms.ethereum), // we have to call the created callback with res.platforms.ethereum
+        createErrorHandler(setTokenAddressError)
       );
-      fetchPriceHistoryGecko(selectedCoin.id, setPriceHistory, (e) =>
-        console.log(e)
+      fetchPriceHistoryGecko(
+        selectedCoin.id,
+        createSuccessHandler(setPriceHistory, setPriceHistoryError),
+        createErrorHandler(setPriceHistoryError)
       );
     }
   }, [selectedCoin]);
@@ -41,6 +61,8 @@ export const CoinSearchContextProvider = ({ children }) => {
     setSelectedTokenAddress,
     priceHistory,
     setPriceHistory,
+    tokenAddressError,
+    priceHistoryError,
   };
 
   return (
