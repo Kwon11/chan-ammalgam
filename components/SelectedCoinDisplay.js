@@ -20,7 +20,7 @@ export const SelectedCoinDisplay = (coin) => {
       <CoinImage src={selectedCoin.large} alt={selectedCoin.name} />
       <CoinName>{selectedCoin.name}</CoinName>
       {coinBalance && (
-        <Balance>{`Your Balance: ${coinBalance.formatted}${coinBalance.symbol}`}</Balance>
+        <Balance>{`Your Balance: ${coinBalance.value.toString()} ${coinBalance.symbol}`}</Balance>
       )}
       <ErrorDisplay
         show={tokenAddressError}
