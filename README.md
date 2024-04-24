@@ -8,6 +8,7 @@ I didn't have time to test it extensively, but only one call for token address a
 Theres some low hanging and medium hanging fruit I would pick with another day(s) time.
 
 In approximate order of "juice worth the squeeze" factor:
+- coinGecko API -> the coinBalance display needs to communicate when its been rate limited
 - date ranges -> in a real scenario this would probably be a must-have, coinGecko supports it
 - styling -> styling is not my strong suit, but if I had more time I would copy another trading platform. I chose this assessment to try and learn shadCN and put myself in a weird no mans land.
 - I think it makes sense to pre-fetch all the list of coins, and have the coins update immediately as you type.
